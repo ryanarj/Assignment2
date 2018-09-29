@@ -30,24 +30,25 @@ namespace Assignment2
             List<Student> studentCollection = ProcessStudent(fileName);
 
             // Will get a student by race or department.
-            if (this.advDepartmentTB.Text.Trim() != string.Empty || this.advCategoryTB.Text.Trim() != string.Empty)
+            if (advDepartmentTB.Text.Trim() != string.Empty || advCategoryTB.Text.Trim() != string.Empty)
             {
                 var students = from student in studentCollection
-                               where student.department == this.advDepartmentTB.Text
-                               || student.race == this.advCategoryTB.Text
+                               where student.department == advDepartmentTB.Text
+                               || student.race == advCategoryTB.Text
+                               || student.gender == advCategoryTB.Text
                                select student;
                 foreach (var s in students)
                 {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
                 }
                 
             }
 
             // Get the gpa times
-            if (this.gpaStartTB.Text.Trim() != string.Empty && this.gpaEndTB.Text.Trim() != string.Empty)
+            if (advGpaStartTB.Text.Trim() != string.Empty && advGpaEndTB.Text.Trim() != string.Empty)
             {
-                double gStart = double.Parse(this.gpaStartTB.Text);
-                double gEnd = double.Parse(this.gpaEndTB.Text);
+                double gStart = double.Parse(this.advGpaStartTB.Text);
+                double gEnd = double.Parse(this.advGpaEndTB.Text);
 
                 var students = from student in studentCollection
                                where student.gpa >= gStart
@@ -55,13 +56,13 @@ namespace Assignment2
                                select student;
                 foreach (var s in students)
                 {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
                 }
 
             }
 
             // Add all students with learning disablilties
-            if (this.learningDisabilityRB.Checked)
+            if (learningDisabilityRB.Checked)
             {
                 var students = from student in studentCollection
                                where student.learningDisability != string.Empty
@@ -76,7 +77,10 @@ namespace Assignment2
                 }
 
             }
-
+            advDepartmentTB.Clear();
+            advCategoryTB.Clear();
+            advGpaEndTB.Clear();
+            advGpaStartTB.Clear();
         }
     }
 

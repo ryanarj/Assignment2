@@ -30,8 +30,8 @@
         {
             this.advDepartmentTB = new System.Windows.Forms.TextBox();
             this.advCategoryTB = new System.Windows.Forms.TextBox();
-            this.gpaStartTB = new System.Windows.Forms.TextBox();
-            this.gpaEndTB = new System.Windows.Forms.TextBox();
+            this.advGpaStartTB = new System.Windows.Forms.TextBox();
+            this.advGpaEndTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,19 +55,19 @@
             this.advCategoryTB.Size = new System.Drawing.Size(100, 20);
             this.advCategoryTB.TabIndex = 2;
             // 
-            // gpaStartTB
+            // advGpaStartTB
             // 
-            this.gpaStartTB.Location = new System.Drawing.Point(9, 125);
-            this.gpaStartTB.Name = "gpaStartTB";
-            this.gpaStartTB.Size = new System.Drawing.Size(100, 20);
-            this.gpaStartTB.TabIndex = 4;
+            this.advGpaStartTB.Location = new System.Drawing.Point(9, 125);
+            this.advGpaStartTB.Name = "advGpaStartTB";
+            this.advGpaStartTB.Size = new System.Drawing.Size(100, 20);
+            this.advGpaStartTB.TabIndex = 4;
             // 
-            // gpaEndTB
+            // advGpaEndTB
             // 
-            this.gpaEndTB.Location = new System.Drawing.Point(135, 125);
-            this.gpaEndTB.Name = "gpaEndTB";
-            this.gpaEndTB.Size = new System.Drawing.Size(100, 20);
-            this.gpaEndTB.TabIndex = 7;
+            this.advGpaEndTB.Location = new System.Drawing.Point(135, 125);
+            this.advGpaEndTB.Name = "advGpaEndTB";
+            this.advGpaEndTB.Size = new System.Drawing.Size(100, 20);
+            this.advGpaEndTB.TabIndex = 7;
             // 
             // label1
             // 
@@ -151,8 +151,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gpaEndTB);
-            this.Controls.Add(this.gpaStartTB);
+            this.Controls.Add(this.advGpaEndTB);
+            this.Controls.Add(this.advGpaStartTB);
             this.Controls.Add(this.advCategoryTB);
             this.Controls.Add(this.advDepartmentTB);
             this.Name = "SearchStudentForm";
@@ -165,8 +165,8 @@
         #endregion
         private System.Windows.Forms.TextBox advDepartmentTB;
         private System.Windows.Forms.TextBox advCategoryTB;
-        private System.Windows.Forms.TextBox gpaStartTB;
-        private System.Windows.Forms.TextBox gpaEndTB;
+        private System.Windows.Forms.TextBox advGpaStartTB;
+        private System.Windows.Forms.TextBox advGpaEndTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
