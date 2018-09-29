@@ -21,6 +21,7 @@ namespace Assignment2
 
         private static List<Student> ProcessStudent(string pathToFile)
         {
+            // Parses the file and then adds the items to a list
             return File.ReadAllLines(pathToFile).Skip(1)
                 .Where(line => line.Length > 1)
                 .Select(Student.ParseFromFile)
@@ -32,6 +33,8 @@ namespace Assignment2
             richTextBox1.Clear();
             string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
             List<Student> studentCollection = ProcessStudent(fileName);
+
+            // Will get a student by race or department.
             if (this.advDepartmentTB.Text.Trim() != string.Empty || this.advCategoryTB.Text.Trim() != string.Empty)
             {
                 var students = from student in studentCollection
@@ -44,6 +47,8 @@ namespace Assignment2
                 }
                 
             }
+
+            // Get the gpa times
             if (this.gpaStartTB.Text.Trim() != string.Empty && this.gpaEndTB.Text.Trim() != string.Empty)
             {
                 double gStart = double.Parse(this.gpaStartTB.Text);
@@ -59,6 +64,8 @@ namespace Assignment2
                 }
 
             }
+
+            // Add all students with learning disablilties
             if (this.learningDisabilityRB.Checked)
             {
                 var students = from student in studentCollection
@@ -98,6 +105,7 @@ namespace Assignment2
 
             return new Student
             {
+                // Parse out each column in Studdent object
                 firstName = columns[0],
                 lastName = columns[1],
                 schoolid = columns[2],
