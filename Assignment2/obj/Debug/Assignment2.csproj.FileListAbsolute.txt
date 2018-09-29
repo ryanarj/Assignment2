@@ -9,3 +9,4 @@ c:\users\kr\documents\visual studio 2015\Projects\Assignment2\Assignment2\obj\De
 c:\users\kr\documents\visual studio 2015\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.AddStudentEducationForm.resources
 c:\users\kr\documents\visual studio 2015\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.AddStudentForm.resources
 C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.SearchStudentForm.resources
+C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\obj\Debug\Assignment2.DeleteSearch.resources

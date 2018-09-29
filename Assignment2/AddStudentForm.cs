@@ -25,6 +25,7 @@ namespace Assignment2
 
         private void toEducationFormBtn_Click(object sender, EventArgs e)
         {
+            // Add all the values into a dictionary
             Dictionary<string, string> formText = new Dictionary<string, string>();
             formText["firstName"] = firstNameTB.Text;
             formText["lastName"] = lastNameTB.Text;
@@ -37,6 +38,8 @@ namespace Assignment2
             formText["race"] = raceTB.Text;
             formText["learningDisability"] = learningDisabilityTB.Text;
 
+
+            // Clear the fields
             firstNameTB.Clear();
             lastNameTB.Clear();
             schoolIdTB.Clear();
@@ -47,14 +50,23 @@ namespace Assignment2
             birthDateTB.Clear();
             genderTB.Clear();
             learningDisabilityTB.Clear();
+
+            // Show the Add student education form
             AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText);
             addStudentEducation.Show();
         }
 
         private void toAdvanceSearchBtn_Click(object sender, EventArgs e)
         {
+            // Show the Student search form
             SearchStudentForm searchStudent = new SearchStudentForm();
             searchStudent.Show();
+        }
+
+        private void deleteUserBtn_Click(object sender, EventArgs e)
+        {
+            DeleteSearch deleteSerach = new DeleteSearch();
+            deleteSerach.Show();
         }
     }
 

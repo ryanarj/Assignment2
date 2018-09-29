@@ -50,6 +50,7 @@
             this.genderTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.toAdvanceSearchBtn = new System.Windows.Forms.Button();
+            this.deleteUserBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // toEducationFormBtn
@@ -233,11 +234,22 @@
             this.toAdvanceSearchBtn.UseVisualStyleBackColor = true;
             this.toAdvanceSearchBtn.Click += new System.EventHandler(this.toAdvanceSearchBtn_Click);
             // 
+            // deleteUserBtn
+            // 
+            this.deleteUserBtn.Location = new System.Drawing.Point(261, 205);
+            this.deleteUserBtn.Name = "deleteUserBtn";
+            this.deleteUserBtn.Size = new System.Drawing.Size(75, 62);
+            this.deleteUserBtn.TabIndex = 22;
+            this.deleteUserBtn.Text = "Delete a User";
+            this.deleteUserBtn.UseVisualStyleBackColor = true;
+            this.deleteUserBtn.Click += new System.EventHandler(this.deleteUserBtn_Click);
+            // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 289);
+            this.Controls.Add(this.deleteUserBtn);
             this.Controls.Add(this.toAdvanceSearchBtn);
             this.Controls.Add(this.learningDisabilityTB);
             this.Controls.Add(this.label8);
@@ -291,6 +303,7 @@
         public System.Windows.Forms.TextBox raceTB;
         public System.Windows.Forms.TextBox genderTB;
         private System.Windows.Forms.Button toAdvanceSearchBtn;
+        private System.Windows.Forms.Button deleteUserBtn;
     }
 }
 
