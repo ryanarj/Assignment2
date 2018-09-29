@@ -81,6 +81,7 @@ namespace Assignment2
             advCategoryTB.Clear();
             advGpaEndTB.Clear();
             advGpaStartTB.Clear();
+            learningDisabilityRB.Checked = false;
         }
     }
 
