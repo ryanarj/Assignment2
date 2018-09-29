@@ -14,35 +14,39 @@ namespace Assignment2
     public partial class AddStudentEducationForm : Form
     {
         Dictionary<string, string> formDict = new Dictionary<string, string>();
-        public AddStudentEducationForm(Dictionary<string, string> form1Dict)
-        {
+        public AddStudentEducationForm(Dictionary<string, string> form1Dict){
+            // Get the dictionary from the other form
             formDict = form1Dict;
             InitializeComponent();
         }
 
-        private void submitBtn_Click(object sender, EventArgs e)
-        {
-
-
+        private void submitBtn_Click(object sender, EventArgs e){
+            // Add the dictionary values from the text box information
+            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
+            string str = "";
             formDict["department"] = departmentTB.Text;
             formDict["enrollmentYear"] = enrollmentYearTB.Text;
             formDict["expGraduation"] = expectedGraduationrTB.Text;
             formDict["gpa"] = gpaTB.Text;
-            string str = "";
+
+            // Format the string to have commas
             foreach(string s in formDict.Values)
             {
                 str += s + ",";
             }
             str += "\n";
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
+
+            // Keep the header values
             if (!File.Exists(fileName))
             {
-                string clientHeader = "firstName,lastName,schoolId,homeAddress,email,phone,birthDate,gender,race,learningDisability,department,enrollmentYear,expGraduation,gpa" + Environment.NewLine;
-
-                File.WriteAllText(fileName, clientHeader);
+                string header = "firstName,lastName,schoolId,homeAddress,email,phone,birthDate,gender,race,learningDisability,department,enrollmentYear,expGraduation,gpa" + Environment.NewLine;
+                File.WriteAllText(fileName, header);
             }
 
+            // Append the new string 
             File.AppendAllText(fileName, str);
+
+            // Clear out the data
             gpaTB.Clear();
             enrollmentYearTB.Clear();
             expectedGraduationrTB.Clear();

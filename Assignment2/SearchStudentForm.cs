@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment2
@@ -30,7 +25,7 @@ namespace Assignment2
 
         private void advSearchBtn_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
+            displayStudentRTB.Clear();
             string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
             List<Student> studentCollection = ProcessStudent(fileName);
 
@@ -43,7 +38,7 @@ namespace Assignment2
                                select student;
                 foreach (var s in students)
                 {
-                    richTextBox1.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
                 }
                 
             }
@@ -60,7 +55,7 @@ namespace Assignment2
                                select student;
                 foreach (var s in students)
                 {
-                    richTextBox1.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
                 }
 
             }
@@ -70,12 +65,14 @@ namespace Assignment2
             {
                 var students = from student in studentCollection
                                where student.learningDisability != string.Empty
-                               || student.learningDisability != "N/A"
-                               || student.learningDisability != "n/a"
+                               && student.learningDisability != "N/A"
+                               && student.learningDisability != "n/a"
                                select student;
+
+                // Display the students
                 foreach (var s in students)
                 {
-                    richTextBox1.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
                 }
 
             }

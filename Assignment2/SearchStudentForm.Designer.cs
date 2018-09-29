@@ -38,7 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.learningDisabilityRB = new System.Windows.Forms.RadioButton();
             this.advSearchBtn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.displayStudentRTB = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // advDepartmentTB
@@ -126,20 +126,20 @@
             this.advSearchBtn.UseVisualStyleBackColor = true;
             this.advSearchBtn.Click += new System.EventHandler(this.advSearchBtn_Click);
             // 
-            // richTextBox1
+            // displayStudentRTB
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(9, 244);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(255, 96);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
+            this.displayStudentRTB.Location = new System.Drawing.Point(9, 244);
+            this.displayStudentRTB.Name = "displayStudentRTB";
+            this.displayStudentRTB.Size = new System.Drawing.Size(255, 96);
+            this.displayStudentRTB.TabIndex = 19;
+            this.displayStudentRTB.Text = "";
             // 
             // SearchStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 352);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.displayStudentRTB);
             this.Controls.Add(this.advSearchBtn);
             this.Controls.Add(this.learningDisabilityRB);
             this.Controls.Add(this.label7);
@@ -168,6 +168,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton learningDisabilityRB;
         private System.Windows.Forms.Button advSearchBtn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox displayStudentRTB;
     }
 }

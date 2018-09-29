@@ -1,6 +1,6 @@
 ﻿namespace Assignment2
 {
-    partial class DeleteSearch
+    partial class DeleteStudentForm
     {
         /// <summary>
         /// Required designer variable.

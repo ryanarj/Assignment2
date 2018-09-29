@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment2
@@ -23,8 +17,7 @@ namespace Assignment2
 
         }
 
-        private void toEducationFormBtn_Click(object sender, EventArgs e)
-        {
+        private void toEducationFormBtn_Click(object sender, EventArgs e){
             // Add all the values into a dictionary
             Dictionary<string, string> formText = new Dictionary<string, string>();
             formText["firstName"] = firstNameTB.Text;
@@ -56,16 +49,15 @@ namespace Assignment2
             addStudentEducation.Show();
         }
 
-        private void toAdvanceSearchBtn_Click(object sender, EventArgs e)
-        {
+        private void toAdvanceSearchBtn_Click(object sender, EventArgs e){
             // Show the Student search form
             SearchStudentForm searchStudent = new SearchStudentForm();
             searchStudent.Show();
         }
 
-        private void deleteUserBtn_Click(object sender, EventArgs e)
-        {
-            DeleteSearch deleteSerach = new DeleteSearch();
+        private void deleteUserBtn_Click(object sender, EventArgs e){
+            // Show the Delete student form
+            DeleteStudentForm deleteSerach = new DeleteStudentForm();
             deleteSerach.Show();
         }
     }
