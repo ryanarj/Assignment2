@@ -77,6 +77,47 @@ namespace Assignment2
                 }
 
             }
+            // Search by id name
+            if (advIDTB.Text.Trim() != string.Empty)
+            {
+                var students = from student in studentCollection
+                               where student.schoolid == advIDTB.Text
+                               select student;
+
+                // Display the students
+                foreach (var s in students)
+                {
+                    displayStudentRTB.AppendText("First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
+                                                 "-Email: " + s.email + Environment.NewLine + "-Phone: " + s.phone + Environment.NewLine + "-Home address: " + s.homeAddress + Environment.NewLine +
+                                                 "-Gender: " + s.gender + Environment.NewLine + "-Race: " + s.race + Environment.NewLine + "-Birthdate: " + s.birthDate + Environment.NewLine +
+                                                 "-Learning Disability: " + s.learningDisability + Environment.NewLine + "-GPA: " + s.gpa + Environment.NewLine + "-Enrollment Year: " + s.enrollmentYear + Environment.NewLine +
+                                                 "-Department: " + s.department + Environment.NewLine + "-Expected Graduation: " + s.expGraduation + Environment.NewLine);
+                }
+
+            }
+
+            // Search by student name
+            if (advNameTB.Text.Trim() != string.Empty)
+            {
+                string[] split = advNameTB.Text.Split(' ');
+                var students = from student in studentCollection
+                               where student.firstName == split[0]
+                               && student.lastName == split[1]
+                               select student;
+
+                // Display the students
+                foreach (var s in students)
+                {
+                    displayStudentRTB.AppendText("First name: " + s.firstName + " " + "-Last name: " + s.lastName + " " + "-School ID: " + s.schoolid + " " +
+                                                 "-Email: " + s.email + " " + "-Phone: " + s.phone + " " + "-Home address: " + s.homeAddress + " " +
+                                                 "-Gender: " + s.gender + " " + "-Race: " + s.race + " " + "-Birthdate: " + s.birthDate + " " +
+                                                 "-Learning Disability: " + s.learningDisability + " " + "-GPA: " + s.gpa + " " + "-Enrollment Year: " + s.enrollmentYear + " " +
+                                                 "-Department: " + s.department + " " + "-Expected Graduation: " + s.expGraduation + " " + Environment.NewLine);
+                }
+
+            }
+            advIDTB.Clear();
+            advNameTB.Clear();
             advDepartmentTB.Clear();
             advCategoryTB.Clear();
             advGpaEndTB.Clear();

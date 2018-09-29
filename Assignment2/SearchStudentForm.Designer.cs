@@ -39,32 +39,36 @@
             this.learningDisabilityRB = new System.Windows.Forms.RadioButton();
             this.advSearchBtn = new System.Windows.Forms.Button();
             this.displayStudentRTB = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.advIDTB = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.advNameTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // advDepartmentTB
             // 
-            this.advDepartmentTB.Location = new System.Drawing.Point(9, 32);
+            this.advDepartmentTB.Location = new System.Drawing.Point(9, 98);
             this.advDepartmentTB.Name = "advDepartmentTB";
             this.advDepartmentTB.Size = new System.Drawing.Size(100, 20);
             this.advDepartmentTB.TabIndex = 1;
             // 
             // advCategoryTB
             // 
-            this.advCategoryTB.Location = new System.Drawing.Point(9, 77);
+            this.advCategoryTB.Location = new System.Drawing.Point(9, 143);
             this.advCategoryTB.Name = "advCategoryTB";
             this.advCategoryTB.Size = new System.Drawing.Size(100, 20);
             this.advCategoryTB.TabIndex = 2;
             // 
             // advGpaStartTB
             // 
-            this.advGpaStartTB.Location = new System.Drawing.Point(9, 125);
+            this.advGpaStartTB.Location = new System.Drawing.Point(9, 191);
             this.advGpaStartTB.Name = "advGpaStartTB";
             this.advGpaStartTB.Size = new System.Drawing.Size(100, 20);
             this.advGpaStartTB.TabIndex = 4;
             // 
             // advGpaEndTB
             // 
-            this.advGpaEndTB.Location = new System.Drawing.Point(135, 125);
+            this.advGpaEndTB.Location = new System.Drawing.Point(135, 191);
             this.advGpaEndTB.Name = "advGpaEndTB";
             this.advGpaEndTB.Size = new System.Drawing.Size(100, 20);
             this.advGpaEndTB.TabIndex = 7;
@@ -73,7 +77,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 10;
@@ -83,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(6, 61);
+            this.label2.Location = new System.Drawing.Point(6, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 11;
@@ -93,7 +97,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(6, 109);
+            this.label4.Location = new System.Drawing.Point(6, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 13;
@@ -102,7 +106,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(113, 128);
+            this.label7.Location = new System.Drawing.Point(113, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 16;
@@ -112,7 +116,7 @@
             // 
             this.learningDisabilityRB.AutoSize = true;
             this.learningDisabilityRB.ForeColor = System.Drawing.Color.Gold;
-            this.learningDisabilityRB.Location = new System.Drawing.Point(9, 160);
+            this.learningDisabilityRB.Location = new System.Drawing.Point(9, 226);
             this.learningDisabilityRB.Name = "learningDisabilityRB";
             this.learningDisabilityRB.Size = new System.Drawing.Size(192, 17);
             this.learningDisabilityRB.TabIndex = 17;
@@ -122,7 +126,7 @@
             // 
             // advSearchBtn
             // 
-            this.advSearchBtn.Location = new System.Drawing.Point(9, 195);
+            this.advSearchBtn.Location = new System.Drawing.Point(9, 261);
             this.advSearchBtn.Name = "advSearchBtn";
             this.advSearchBtn.Size = new System.Drawing.Size(100, 23);
             this.advSearchBtn.TabIndex = 18;
@@ -132,18 +136,56 @@
             // 
             // displayStudentRTB
             // 
-            this.displayStudentRTB.Location = new System.Drawing.Point(9, 244);
+            this.displayStudentRTB.Location = new System.Drawing.Point(9, 307);
             this.displayStudentRTB.Name = "displayStudentRTB";
             this.displayStudentRTB.Size = new System.Drawing.Size(255, 96);
             this.displayStudentRTB.TabIndex = 19;
             this.displayStudentRTB.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gold;
+            this.label3.Location = new System.Drawing.Point(6, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Search by userID";
+            // 
+            // advIDTB
+            // 
+            this.advIDTB.Location = new System.Drawing.Point(9, 48);
+            this.advIDTB.Name = "advIDTB";
+            this.advIDTB.Size = new System.Drawing.Size(100, 20);
+            this.advIDTB.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gold;
+            this.label5.Location = new System.Drawing.Point(132, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Search by Name";
+            // 
+            // advNameTB
+            // 
+            this.advNameTB.Location = new System.Drawing.Point(135, 48);
+            this.advNameTB.Name = "advNameTB";
+            this.advNameTB.Size = new System.Drawing.Size(100, 20);
+            this.advNameTB.TabIndex = 22;
             // 
             // SearchStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(295, 352);
+            this.ClientSize = new System.Drawing.Size(295, 415);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.advNameTB);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.advIDTB);
             this.Controls.Add(this.displayStudentRTB);
             this.Controls.Add(this.advSearchBtn);
             this.Controls.Add(this.learningDisabilityRB);
@@ -174,5 +216,9 @@
         private System.Windows.Forms.RadioButton learningDisabilityRB;
         private System.Windows.Forms.Button advSearchBtn;
         private System.Windows.Forms.RichTextBox displayStudentRTB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox advIDTB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox advNameTB;
     }
 }
