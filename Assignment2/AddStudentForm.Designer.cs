@@ -55,7 +55,8 @@
             // 
             // toEducationFormBtn
             // 
-            this.toEducationFormBtn.Location = new System.Drawing.Point(158, 205);
+            this.toEducationFormBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toEducationFormBtn.Location = new System.Drawing.Point(172, 205);
             this.toEducationFormBtn.Name = "toEducationFormBtn";
             this.toEducationFormBtn.Size = new System.Drawing.Size(97, 23);
             this.toEducationFormBtn.TabIndex = 0;
@@ -66,6 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(34, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
@@ -90,6 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(34, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
@@ -106,11 +109,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(34, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(136, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "School ID";
+            this.label3.Text = "School ID (Must be unique)";
             // 
             // homeAddressTB
             // 
@@ -122,6 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(34, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
@@ -138,6 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gold;
             this.label5.Location = new System.Drawing.Point(34, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
@@ -154,6 +160,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Gold;
             this.label6.Location = new System.Drawing.Point(34, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
@@ -162,7 +169,7 @@
             // 
             // birthDateTB
             // 
-            this.birthDateTB.Location = new System.Drawing.Point(158, 52);
+            this.birthDateTB.Location = new System.Drawing.Point(172, 52);
             this.birthDateTB.Name = "birthDateTB";
             this.birthDateTB.Size = new System.Drawing.Size(100, 20);
             this.birthDateTB.TabIndex = 14;
@@ -170,7 +177,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 36);
+            this.label7.ForeColor = System.Drawing.Color.Gold;
+            this.label7.Location = new System.Drawing.Point(169, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 13;
@@ -178,7 +186,7 @@
             // 
             // learningDisabilityTB
             // 
-            this.learningDisabilityTB.Location = new System.Drawing.Point(155, 169);
+            this.learningDisabilityTB.Location = new System.Drawing.Point(169, 169);
             this.learningDisabilityTB.Name = "learningDisabilityTB";
             this.learningDisabilityTB.Size = new System.Drawing.Size(100, 20);
             this.learningDisabilityTB.TabIndex = 20;
@@ -186,7 +194,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(152, 153);
+            this.label8.ForeColor = System.Drawing.Color.Gold;
+            this.label8.Location = new System.Drawing.Point(166, 153);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 13);
             this.label8.TabIndex = 19;
@@ -194,7 +203,7 @@
             // 
             // raceTB
             // 
-            this.raceTB.Location = new System.Drawing.Point(158, 130);
+            this.raceTB.Location = new System.Drawing.Point(172, 130);
             this.raceTB.Name = "raceTB";
             this.raceTB.Size = new System.Drawing.Size(100, 20);
             this.raceTB.TabIndex = 18;
@@ -202,7 +211,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(155, 114);
+            this.label9.ForeColor = System.Drawing.Color.Gold;
+            this.label9.Location = new System.Drawing.Point(169, 114);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 17;
@@ -210,7 +220,7 @@
             // 
             // genderTB
             // 
-            this.genderTB.Location = new System.Drawing.Point(158, 91);
+            this.genderTB.Location = new System.Drawing.Point(172, 91);
             this.genderTB.Name = "genderTB";
             this.genderTB.Size = new System.Drawing.Size(100, 20);
             this.genderTB.TabIndex = 16;
@@ -218,7 +228,8 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(155, 75);
+            this.label10.ForeColor = System.Drawing.Color.Gold;
+            this.label10.Location = new System.Drawing.Point(169, 75);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 15;
@@ -226,7 +237,7 @@
             // 
             // toAdvanceSearchBtn
             // 
-            this.toAdvanceSearchBtn.Location = new System.Drawing.Point(158, 247);
+            this.toAdvanceSearchBtn.Location = new System.Drawing.Point(172, 247);
             this.toAdvanceSearchBtn.Name = "toAdvanceSearchBtn";
             this.toAdvanceSearchBtn.Size = new System.Drawing.Size(97, 23);
             this.toAdvanceSearchBtn.TabIndex = 21;
@@ -236,7 +247,7 @@
             // 
             // deleteUserBtn
             // 
-            this.deleteUserBtn.Location = new System.Drawing.Point(261, 205);
+            this.deleteUserBtn.Location = new System.Drawing.Point(275, 205);
             this.deleteUserBtn.Name = "deleteUserBtn";
             this.deleteUserBtn.Size = new System.Drawing.Size(75, 62);
             this.deleteUserBtn.TabIndex = 22;
@@ -248,7 +259,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 289);
+            this.BackColor = System.Drawing.Color.DarkGreen;
+            this.ClientSize = new System.Drawing.Size(366, 289);
             this.Controls.Add(this.deleteUserBtn);
             this.Controls.Add(this.toAdvanceSearchBtn);
             this.Controls.Add(this.learningDisabilityTB);

@@ -72,7 +72,7 @@ namespace Assignment2
                 // Display the students
                 foreach (var s in students)
                 {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName);
+                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
                 }
 
             }

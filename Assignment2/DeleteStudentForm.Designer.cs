@@ -53,21 +53,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(75, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter User ID to delete user:";
             // 
-            // DeleteSearch
+            // DeleteStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.userIdTB);
             this.Controls.Add(this.deleteBtn);
-            this.Name = "DeleteSearch";
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Name = "DeleteStudentForm";
             this.Text = "Delete Search";
             this.ResumeLayout(false);
             this.PerformLayout();

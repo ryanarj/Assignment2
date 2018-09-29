@@ -72,6 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
@@ -81,6 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(6, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
@@ -90,6 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(6, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
@@ -108,6 +111,7 @@
             // learningDisabilityRB
             // 
             this.learningDisabilityRB.AutoSize = true;
+            this.learningDisabilityRB.ForeColor = System.Drawing.Color.Gold;
             this.learningDisabilityRB.Location = new System.Drawing.Point(9, 160);
             this.learningDisabilityRB.Name = "learningDisabilityRB";
             this.learningDisabilityRB.Size = new System.Drawing.Size(192, 17);
@@ -138,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(295, 352);
             this.Controls.Add(this.displayStudentRTB);
             this.Controls.Add(this.advSearchBtn);
