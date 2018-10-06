@@ -30,13 +30,13 @@
         {
             this.gpaTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.expectedGraduationrTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.enrollmentYearTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.departmentTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
+            this.enrollementYearCB = new System.Windows.Forms.ComboBox();
+            this.expectedGradCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // gpaTB
@@ -57,13 +57,6 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Current GPA";
             // 
-            // expectedGraduationrTB
-            // 
-            this.expectedGraduationrTB.Location = new System.Drawing.Point(15, 103);
-            this.expectedGraduationrTB.Name = "expectedGraduationrTB";
-            this.expectedGraduationrTB.Size = new System.Drawing.Size(100, 20);
-            this.expectedGraduationrTB.TabIndex = 27;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -74,13 +67,6 @@
             this.label6.Size = new System.Drawing.Size(107, 13);
             this.label6.TabIndex = 26;
             this.label6.Text = "Expected Graduation";
-            // 
-            // enrollmentYearTB
-            // 
-            this.enrollmentYearTB.Location = new System.Drawing.Point(15, 64);
-            this.enrollmentYearTB.Name = "enrollmentYearTB";
-            this.enrollmentYearTB.Size = new System.Drawing.Size(100, 20);
-            this.enrollmentYearTB.TabIndex = 25;
             // 
             // label5
             // 
@@ -121,17 +107,33 @@
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
+            // enrollementYearCB
+            // 
+            this.enrollementYearCB.FormattingEnabled = true;
+            this.enrollementYearCB.Location = new System.Drawing.Point(13, 62);
+            this.enrollementYearCB.Name = "enrollementYearCB";
+            this.enrollementYearCB.Size = new System.Drawing.Size(106, 21);
+            this.enrollementYearCB.TabIndex = 30;
+            // 
+            // expectedGradCB
+            // 
+            this.expectedGradCB.FormattingEnabled = true;
+            this.expectedGradCB.Location = new System.Drawing.Point(12, 103);
+            this.expectedGradCB.Name = "expectedGradCB";
+            this.expectedGradCB.Size = new System.Drawing.Size(106, 21);
+            this.expectedGradCB.TabIndex = 31;
+            // 
             // AddStudentEducationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(284, 141);
+            this.Controls.Add(this.expectedGradCB);
+            this.Controls.Add(this.enrollementYearCB);
             this.Controls.Add(this.gpaTB);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.expectedGraduationrTB);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.enrollmentYearTB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.departmentTB);
             this.Controls.Add(this.label4);
@@ -147,12 +149,12 @@
 
         private System.Windows.Forms.TextBox gpaTB;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox expectedGraduationrTB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox enrollmentYearTB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox departmentTB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.ComboBox enrollementYearCB;
+        private System.Windows.Forms.ComboBox expectedGradCB;
     }
 }

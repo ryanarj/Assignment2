@@ -87,7 +87,7 @@ namespace Assignment2
                 // Display the students
                 foreach (var s in students)
                 {
-                    displayStudentRTB.AppendText("First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
+                    displayStudentRTB.AppendText("-First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
                                                  "-Email: " + s.email + Environment.NewLine + "-Phone: " + s.phone + Environment.NewLine + "-Home address: " + s.homeAddress + Environment.NewLine +
                                                  "-Gender: " + s.gender + Environment.NewLine + "-Race: " + s.race + Environment.NewLine + "-Birthdate: " + s.birthDate + Environment.NewLine +
                                                  "-Learning Disability: " + s.learningDisability + Environment.NewLine + "-GPA: " + s.gpa + Environment.NewLine + "-Enrollment Year: " + s.enrollmentYear + Environment.NewLine +
@@ -108,11 +108,11 @@ namespace Assignment2
                 // Display the students
                 foreach (var s in students)
                 {
-                    displayStudentRTB.AppendText("First name: " + s.firstName + " " + "-Last name: " + s.lastName + " " + "-School ID: " + s.schoolid + " " +
-                                                 "-Email: " + s.email + " " + "-Phone: " + s.phone + " " + "-Home address: " + s.homeAddress + " " +
-                                                 "-Gender: " + s.gender + " " + "-Race: " + s.race + " " + "-Birthdate: " + s.birthDate + " " +
-                                                 "-Learning Disability: " + s.learningDisability + " " + "-GPA: " + s.gpa + " " + "-Enrollment Year: " + s.enrollmentYear + " " +
-                                                 "-Department: " + s.department + " " + "-Expected Graduation: " + s.expGraduation + " " + Environment.NewLine);
+                    displayStudentRTB.AppendText("-First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
+                                                 "-Email: " + s.email + Environment.NewLine + "-Phone: " + s.phone + Environment.NewLine + "-Home address: " + s.homeAddress + Environment.NewLine +
+                                                 "-Gender: " + s.gender + Environment.NewLine + "-Race: " + s.race + Environment.NewLine + "-Birthdate: " + s.birthDate + Environment.NewLine +
+                                                 "-Learning Disability: " + s.learningDisability + Environment.NewLine + "-GPA: " + s.gpa + Environment.NewLine + "-Enrollment Year: " + s.enrollmentYear + Environment.NewLine +
+                                                 "-Department: " + s.department + Environment.NewLine + "-Expected Graduation: " + s.expGraduation + Environment.NewLine);
                 }
 
             }

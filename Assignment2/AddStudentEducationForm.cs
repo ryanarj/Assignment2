@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment2
 {
+
     public partial class AddStudentEducationForm : Form
     {
         Dictionary<string, string> formDict = new Dictionary<string, string>();
@@ -24,34 +19,59 @@ namespace Assignment2
             // Add the dictionary values from the text box information
             string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
             string str = "";
-            formDict["department"] = departmentTB.Text;
-            formDict["enrollmentYear"] = enrollmentYearTB.Text;
-            formDict["expGraduation"] = expectedGraduationrTB.Text;
-            formDict["gpa"] = gpaTB.Text;
 
-            // Format the string to have commas
-            foreach(string s in formDict.Values)
+            enrollementYearCB.Items.Add(new { Text = "", Value = "" });
+            enrollementYearCB.Items.Add(new { Text = "2012", Value = "2012" });
+            enrollementYearCB.Items.Add(new { Text = "2013", Value = "2013" });
+            enrollementYearCB.Items.Add(new { Text = "2014", Value = "2014" });
+            enrollementYearCB.Items.Add(new { Text = "2015", Value = "2015" });
+            enrollementYearCB.Items.Add(new { Text = "2016", Value = "2016" });
+
+
+            expectedGradCB.Items.Add(new { Text = "", Value = "" });
+            expectedGradCB.Items.Add(new { Text = "2016", Value = "2016" });
+            expectedGradCB.Items.Add(new { Text = "2017", Value = "2017" });
+            expectedGradCB.Items.Add(new { Text = "2018", Value = "2018" });
+            expectedGradCB.Items.Add(new { Text = "2019", Value = "2019" });
+            expectedGradCB.Items.Add(new { Text = "2020", Value = "2020" });
+
+            if (departmentTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(departmentTB.Text, "^[a-zA-Z]+$")
+                && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "^[a-zA-Z]+$")
+                && enrollementYearCB.Text != "")
             {
-                str += s + ",";
-            }
-            str += "\n";
+                formDict["department"] = departmentTB.Text;
+                formDict["enrollmentYear"] = enrollementYearCB.Text;
+                formDict["expGraduation"] = expectedGradCB.Text;
+                formDict["gpa"] = gpaTB.Text;
 
-            // Keep the header values
-            if (!File.Exists(fileName))
+                // Format the string to have commas
+                foreach (string s in formDict.Values)
+                {
+                    str += s + ",";
+                }
+                str += "\n";
+
+                // Keep the header values
+                if (!File.Exists(fileName))
+                {
+                    string header = "firstName,lastName,schoolId,homeAddress,email,phone,birthDate,gender,race,learningDisability,department,enrollmentYear,expGraduation,gpa" + Environment.NewLine;
+                    File.WriteAllText(fileName, header);
+                }
+
+                // Append the new string 
+                File.AppendAllText(fileName, str);
+
+                // Clear out the data
+                gpaTB.Clear();
+                departmentTB.Clear();
+                this.Close();
+
+            }
+            else
             {
-                string header = "firstName,lastName,schoolId,homeAddress,email,phone,birthDate,gender,race,learningDisability,department,enrollmentYear,expGraduation,gpa" + Environment.NewLine;
-                File.WriteAllText(fileName, header);
+                MessageBox.Show("All textboxes need to have a value and/or all values need to be the correct data type!!");
             }
 
-            // Append the new string 
-            File.AppendAllText(fileName, str);
-
-            // Clear out the data
-            gpaTB.Clear();
-            enrollmentYearTB.Clear();
-            expectedGraduationrTB.Clear();
-            departmentTB.Clear();
-            this.Close();
         }
     }
 }

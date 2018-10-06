@@ -20,33 +20,52 @@ namespace Assignment2
         private void toEducationFormBtn_Click(object sender, EventArgs e){
             // Add all the values into a dictionary
             Dictionary<string, string> formText = new Dictionary<string, string>();
-            formText["firstName"] = firstNameTB.Text;
-            formText["lastName"] = lastNameTB.Text;
-            formText["schoolId"] = schoolIdTB.Text;
-            formText["homeAddress"] = homeAddressTB.Text;
-            formText["email"] = emailTB.Text;
-            formText["phone"] = phoneNumberTB.Text;
-            formText["birthDate"] = birthDateTB.Text;
-            formText["gender"] = genderTB.Text;
-            formText["race"] = raceTB.Text;
-            formText["learningDisability"] = learningDisabilityTB.Text;
 
 
-            // Clear the fields
-            firstNameTB.Clear();
-            lastNameTB.Clear();
-            schoolIdTB.Clear();
-            homeAddressTB.Clear();
-            emailTB.Clear();
-            phoneNumberTB.Clear();
-            raceTB.Clear();
-            birthDateTB.Clear();
-            genderTB.Clear();
-            learningDisabilityTB.Clear();
+            if (firstNameTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(firstNameTB.Text, "^[a-zA-Z]+$") 
+                && lastNameTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(lastNameTB.Text, "^[a-zA-Z]+$")
+                && schoolIdTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(schoolIdTB.Text, "^[a-zA-Z]+$")
+                && homeAddressTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(homeAddressTB.Text, "^[a-zA-Z]+$")
+                && emailTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(emailTB.Text, "^[a-zA-Z]+$")
+                && phoneNumberTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(phoneNumberTB.Text, "^[a-zA-Z]+$")
+                && raceTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(raceTB.Text, "^[a-zA-Z]+$")
+                && learningDisabilityTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(learningDisabilityTB.Text, "^[a-zA-Z]+$")
+                && genderTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(genderTB.Text, "^[a-zA-Z]+$"))
+            {
+                formText["firstName"] = firstNameTB.Text;
+                formText["lastName"] = lastNameTB.Text;
+                formText["schoolId"] = schoolIdTB.Text;
+                formText["homeAddress"] = homeAddressTB.Text;
+                formText["email"] = emailTB.Text;
+                formText["phone"] = phoneNumberTB.Text;
+                formText["birthDate"] = birthDateTB.Text;
+                formText["gender"] = genderTB.Text;
+                formText["race"] = raceTB.Text;
+                formText["learningDisability"] = learningDisabilityTB.Text;
 
-            // Show the Add student education form
-            AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText);
-            addStudentEducation.Show();
+
+                // Clear the fields
+                firstNameTB.Clear();
+                lastNameTB.Clear();
+                schoolIdTB.Clear();
+                homeAddressTB.Clear();
+                emailTB.Clear();
+                phoneNumberTB.Clear();
+                raceTB.Clear();
+                birthDateTB.Clear();
+                genderTB.Clear();
+                learningDisabilityTB.Clear();
+
+                // Show the Add student education form
+                AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText);
+                addStudentEducation.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("All textboxes need to have a value and/or all values need to be the correct data type!!");
+            }
+        
         }
 
         private void toAdvanceSearchBtn_Click(object sender, EventArgs e){
