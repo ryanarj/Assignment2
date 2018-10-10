@@ -1,0 +1,18 @@
+<root>
+  <Student>
+    <firstName>asda</firstName>
+    <lastName>sdasd</lastName>
+    <schoolId>asd</schoolId>
+    <homeAddress>asd</homeAddress>
+    <email>asd</email>
+    <phone>asd</phone>
+    <birthDate>asd</birthDate>
+    <gender>asd</gender>
+    <race>asd</race>
+    <learningDisability>asd</learningDisability>
+    <department>asd</department>
+    <enrollmentYear>asasd</enrollmentYear>
+    <expGraduation>asd</expGraduation>
+    <gpa>asd</gpa>
+  </Student>
+</root>

@@ -14,7 +14,7 @@ namespace Assignment2
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
+            string fileName = "Students.xml";
             string userID = userIdTB.Text;
             List<string> lines = new List<String>();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Assignment2
 {
@@ -17,7 +18,7 @@ namespace Assignment2
 
         private void submitBtn_Click(object sender, EventArgs e){
             // Add the dictionary values from the text box information
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
+            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
             string str = "";
 
             enrollementYearCB.Items.Add(new { Text = "", Value = "" });
@@ -39,12 +40,46 @@ namespace Assignment2
                 && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "^[a-zA-Z]+$")
                 && enrollementYearCB.Text != "")
             {
-                formDict["department"] = departmentTB.Text;
-                formDict["enrollmentYear"] = enrollementYearCB.Text;
-                formDict["expGraduation"] = expectedGradCB.Text;
-                formDict["gpa"] = gpaTB.Text;
 
-                // Format the string to have commas
+                XmlDocument doc = new XmlDocument();
+                doc.Load(fileName);
+                XmlNode student = doc.CreateElement("Student");
+                XmlNode firstName = doc.CreateElement("firstName");
+                firstName.InnerText = formDict["firstName"];
+                XmlNode lastName = doc.CreateElement("lastName");
+                lastName.InnerText = formDict["lastName"];
+                XmlNode schoolId = doc.CreateElement("schoolId");
+                schoolId.InnerText = formDict["schoolId"];
+                XmlNode homeAddress = doc.CreateElement("homeAddress");
+                homeAddress.InnerText = formDict["homeAddress"];
+                XmlNode email = doc.CreateElement("email");
+                email.InnerText = formDict["email"];
+                XmlNode phone = doc.CreateElement("phone");
+                phone.InnerText = formDict["phone"];
+                XmlNode birthDate = doc.CreateElement("birthDate");
+                birthDate.InnerText = formDict["birthDate"];
+                XmlNode gender = doc.CreateElement("gender");
+                gender.InnerText = formDict["gender"];
+                XmlNode race = doc.CreateElement("race");
+                race.InnerText = formDict["race"];
+                XmlNode learningDisability = doc.CreateElement("learningDisability");
+                learningDisability.InnerText = formDict["learningDisability"];
+                XmlNode department = doc.CreateElement("department");
+                department.InnerText = departmentTB.Text;
+                XmlNode enrollmentYear = doc.CreateElement("enrollmentYear");
+                enrollmentYear.InnerText = enrollementYearCB.Text;
+                XmlNode expGraduation = doc.CreateElement("expGraduation");
+                expGraduation.InnerText = expectedGradCB.Text;
+                XmlNode gpa = doc.CreateElement("gpa");
+                gpa.InnerText = gpaTB.Text;
+                student.AppendChild(firstName); student.AppendChild(lastName); student.AppendChild(schoolId); student.AppendChild(homeAddress);
+                student.AppendChild(email); student.AppendChild(phone); student.AppendChild(birthDate); student.AppendChild(gender);
+                student.AppendChild(race); student.AppendChild(learningDisability); student.AppendChild(department); student.AppendChild(enrollmentYear);
+                student.AppendChild(expGraduation); student.AppendChild(gpa);
+                doc.DocumentElement.AppendChild(student);
+                doc.Save(fileName);
+
+                /* Format the string to have commas
                 foreach (string s in formDict.Values)
                 {
                     str += s + ",";
@@ -65,6 +100,7 @@ namespace Assignment2
                 gpaTB.Clear();
                 departmentTB.Clear();
                 this.Close();
+                */
 
             }
             else
