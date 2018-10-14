@@ -4,6 +4,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Assignment2
 {
@@ -26,20 +27,22 @@ namespace Assignment2
         private void advSearchBtn_Click(object sender, EventArgs e)
         {
             displayStudentRTB.Clear();
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\School.cvs";
-            List<Student> studentCollection = ProcessStudent(fileName);
+
+            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(fileName);
+            XmlNodeList nodes = xdoc.GetElementsByTagName("Student");
 
             // Will get a student by race or department.
             if (advDepartmentTB.Text.Trim() != string.Empty || advCategoryTB.Text.Trim() != string.Empty)
             {
-                var students = from student in studentCollection
-                               where student.department == advDepartmentTB.Text
-                               || student.race == advCategoryTB.Text
-                               || student.gender == advCategoryTB.Text
-                               select student;
-                foreach (var s in students)
-                {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
+
+                for (int i = 0; i < nodes.Count; i++){
+     
+                    if (nodes[i]["department"].InnerXml == advDepartmentTB.Text || nodes[i]["gender"].InnerXml == advCategoryTB.Text || nodes[i]["race"].InnerXml == advCategoryTB.Text)
+                    {
+                        displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
+                    }
                 }
                 
             }
@@ -50,13 +53,13 @@ namespace Assignment2
                 double gStart = double.Parse(this.advGpaStartTB.Text);
                 double gEnd = double.Parse(this.advGpaEndTB.Text);
 
-                var students = from student in studentCollection
-                               where student.gpa >= gStart
-                               && student.gpa <= gEnd
-                               select student;
-                foreach (var s in students)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
+                    double currGpa = double.Parse(nodes[i]["gpa"].InnerXml);
+                    if (gStart >= currGpa && gEnd <=currGpa)
+                    {
+                        displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
+                    }
                 }
 
             }
@@ -64,16 +67,13 @@ namespace Assignment2
             // Add all students with learning disablilties
             if (learningDisabilityRB.Checked)
             {
-                var students = from student in studentCollection
-                               where student.learningDisability != string.Empty
-                               && student.learningDisability != "N/A"
-                               && student.learningDisability != "n/a"
-                               select student;
-
-                // Display the students
-                foreach (var s in students)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    displayStudentRTB.AppendText(s.firstName + " " + s.lastName + Environment.NewLine);
+                    if (nodes[i]["learningDisability"].InnerXml != "N/A" || nodes[i]["learningDisability"].InnerXml != "n/a")
+                    {
+                        displayStudentRTB.AppendText(nodes[i]["firstName"] + " " + nodes[i]["lastName"] + Environment.NewLine);
+                    }
+
                 }
 
             }
