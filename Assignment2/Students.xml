@@ -1,8 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <Student>
     <firstName>asda</firstName>
     <lastName>sdasd</lastName>
-    <schoolId>asd</schoolId>
+    <schoolId>asd1</schoolId>
     <homeAddress>asd</homeAddress>
     <email>asd</email>
     <phone>asd</phone>

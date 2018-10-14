@@ -110,6 +110,11 @@
             // enrollementYearCB
             // 
             this.enrollementYearCB.FormattingEnabled = true;
+            this.enrollementYearCB.Items.AddRange(new object[] {
+            "2012",
+            "2013",
+            "2014",
+            "2015"});
             this.enrollementYearCB.Location = new System.Drawing.Point(13, 62);
             this.enrollementYearCB.Name = "enrollementYearCB";
             this.enrollementYearCB.Size = new System.Drawing.Size(106, 21);
@@ -118,6 +123,11 @@
             // expectedGradCB
             // 
             this.expectedGradCB.FormattingEnabled = true;
+            this.expectedGradCB.Items.AddRange(new object[] {
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
             this.expectedGradCB.Location = new System.Drawing.Point(12, 103);
             this.expectedGradCB.Name = "expectedGradCB";
             this.expectedGradCB.Size = new System.Drawing.Size(106, 21);

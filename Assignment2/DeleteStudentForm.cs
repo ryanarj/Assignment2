@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Assignment2
 {
@@ -14,31 +17,21 @@ namespace Assignment2
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string fileName = "Students.xml";
+            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
             string userID = userIdTB.Text;
-            List<string> lines = new List<String>();
-
-            // Open the file and then file the line and then delete it if found.
-            if (File.Exists(fileName)){
-                using (StreamReader reader = new StreamReader(fileName)){
-                    string line;
-                    while ((line = reader.ReadLine()) != null){
-                        if (line.Contains(",")){
-                            // Split the line by ","
-                            string[] split = line.Split(',');
-                            // If the user id is in the third position of the array delete the line
-                            if (split[2].Contains(userID)){line = "";}
-                        }
-                        lines.Add(line);
-                    }
-                }
-                
-                // Add the lines back tot eh file
-                using (StreamWriter writer = new StreamWriter(fileName, false)){
-                    foreach (string l in lines)
-                        writer.WriteLine(l);
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(fileName);
+            XmlNodeList nodes = xdoc.GetElementsByTagName("Student");
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                string a = nodes[i]["schoolId"].InnerXml;
+                if (nodes[i]["schoolId"].InnerXml == userID)
+                {
+                    nodes[i].ParentNode.RemoveChild(nodes[i]);
                 }
             }
+            xdoc.Save(fileName);
+
         }
     }
 }

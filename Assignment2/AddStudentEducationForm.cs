@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -13,32 +15,19 @@ namespace Assignment2
         public AddStudentEducationForm(Dictionary<string, string> form1Dict){
             // Get the dictionary from the other form
             formDict = form1Dict;
+
             InitializeComponent();
         }
 
         private void submitBtn_Click(object sender, EventArgs e){
             // Add the dictionary values from the text box information
+
+
             string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
-            string str = "";
-
-            enrollementYearCB.Items.Add(new { Text = "", Value = "" });
-            enrollementYearCB.Items.Add(new { Text = "2012", Value = "2012" });
-            enrollementYearCB.Items.Add(new { Text = "2013", Value = "2013" });
-            enrollementYearCB.Items.Add(new { Text = "2014", Value = "2014" });
-            enrollementYearCB.Items.Add(new { Text = "2015", Value = "2015" });
-            enrollementYearCB.Items.Add(new { Text = "2016", Value = "2016" });
-
-
-            expectedGradCB.Items.Add(new { Text = "", Value = "" });
-            expectedGradCB.Items.Add(new { Text = "2016", Value = "2016" });
-            expectedGradCB.Items.Add(new { Text = "2017", Value = "2017" });
-            expectedGradCB.Items.Add(new { Text = "2018", Value = "2018" });
-            expectedGradCB.Items.Add(new { Text = "2019", Value = "2019" });
-            expectedGradCB.Items.Add(new { Text = "2020", Value = "2020" });
 
             if (departmentTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(departmentTB.Text, "^[a-zA-Z]+$")
-                && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "^[a-zA-Z]+$")
-                && enrollementYearCB.Text != "")
+                && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "[0-9]")
+                && enrollementYearCB.Text != "" && expectedGradCB.Text != "")
             {
 
                 XmlDocument doc = new XmlDocument();
