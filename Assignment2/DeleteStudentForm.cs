@@ -1,36 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace Assignment2
 {
     public partial class DeleteStudentForm : Form
     {
-        public DeleteStudentForm()
+        DirectoryInfo pFolder;
+        public DeleteStudentForm(DirectoryInfo pFolder1)
         {
+            pFolder = pFolder1;
             InitializeComponent();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
+            bool isFound = false;
+            string path = pFolder.FullName;
+            string fileName = path.Substring(0, path.Length - 3) + "Students.xml";
             string userID = userIdTB.Text;
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(fileName);
             XmlNodeList nodes = xdoc.GetElementsByTagName("Student");
             for (int i = 0; i < nodes.Count; i++)
             {
-                string a = nodes[i]["schoolId"].InnerXml;
                 if (nodes[i]["schoolId"].InnerXml == userID)
                 {
                     nodes[i].ParentNode.RemoveChild(nodes[i]);
+                    MessageBox.Show("Student has been been deleted!!");
+                    isFound = true;
+                    xdoc.Save(fileName);
                 }
             }
-            xdoc.Save(fileName);
+            if(!isFound) {
+                MessageBox.Show("Cannot find user!");
+            }
 
         }
     }

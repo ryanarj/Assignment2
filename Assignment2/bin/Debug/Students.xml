@@ -1,35 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <Student>
-    <firstName>asda</firstName>
-    <lastName>sdasd</lastName>
-    <schoolId>asd</schoolId>
-    <homeAddress>asd</homeAddress>
-    <email>asd</email>
-    <phone>asd</phone>
-    <birthDate>asd</birthDate>
-    <gender>asd</gender>
-    <race>asd</race>
-    <learningDisability>asd</learningDisability>
-    <department>asd</department>
-    <enrollmentYear>asasd</enrollmentYear>
-    <expGraduation>asd</expGraduation>
-    <gpa>asd</gpa>
-  </Student>
-  <Student>
-    <firstName>asda</firstName>
-    <lastName>sdasd</lastName>
-    <schoolId>asd1</schoolId>
-    <homeAddress>asd</homeAddress>
-    <email>asd</email>
-    <phone>asd</phone>
-    <birthDate>asd</birthDate>
-    <gender>asd</gender>
-    <race>asd</race>
-    <learningDisability>asd</learningDisability>
-    <department>asd</department>
-    <enrollmentYear>asasd</enrollmentYear>
-    <expGraduation>asd</expGraduation>
-    <gpa>asd</gpa>
+    <firstName>q</firstName>
+    <lastName>q</lastName>
+    <schoolId>q</schoolId>
+    <homeAddress>q</homeAddress>
+    <email>q</email>
+    <phone>q</phone>
+    <birthDate>q</birthDate>
+    <gender>q</gender>
+    <race>q</race>
+    <learningDisability>q</learningDisability>
+    <department>ENG</department>
+    <enrollmentYear>2012</enrollmentYear>
+    <expGraduation>2019</expGraduation>
+    <gpa>2.5</gpa>
   </Student>
 </root>

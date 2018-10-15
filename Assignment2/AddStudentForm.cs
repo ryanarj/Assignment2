@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Assignment2
@@ -7,8 +8,10 @@ namespace Assignment2
 
     public partial class AddStudentForm : Form
     {
-        public AddStudentForm()
+        DirectoryInfo pFolder1;
+        public AddStudentForm(DirectoryInfo pFolder)
         {
+            pFolder1 = pFolder;
             InitializeComponent();
         }
 
@@ -57,7 +60,7 @@ namespace Assignment2
                 learningDisabilityTB.Clear();
 
                 // Show the Add student education form
-                AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText);
+                AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText, pFolder1);
                 addStudentEducation.Show();
 
             }
@@ -70,13 +73,13 @@ namespace Assignment2
 
         private void toAdvanceSearchBtn_Click(object sender, EventArgs e){
             // Show the Student search form
-            SearchStudentForm searchStudent = new SearchStudentForm();
+            SearchStudentForm searchStudent = new SearchStudentForm(pFolder1);
             searchStudent.Show();
         }
 
         private void deleteUserBtn_Click(object sender, EventArgs e){
             // Show the Delete student form
-            DeleteStudentForm deleteSerach = new DeleteStudentForm();
+            DeleteStudentForm deleteSerach = new DeleteStudentForm(pFolder1);
             deleteSerach.Show();
         }
     }

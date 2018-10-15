@@ -10,8 +10,10 @@ namespace Assignment2
 {
     public partial class SearchStudentForm : Form
     {
-        public SearchStudentForm()
+        DirectoryInfo pFolder;
+        public SearchStudentForm(DirectoryInfo parentFolder)
         {
+            pFolder = parentFolder;
             InitializeComponent();
         }
 
@@ -27,8 +29,8 @@ namespace Assignment2
         private void advSearchBtn_Click(object sender, EventArgs e)
         {
             displayStudentRTB.Clear();
-
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
+            string path = pFolder.FullName;
+            string fileName = path.Substring(0, path.Length - 3) + "Students.xml";
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(fileName);
             XmlNodeList nodes = xdoc.GetElementsByTagName("Student");
@@ -77,21 +79,21 @@ namespace Assignment2
                 }
 
             }
+
             // Search by id name
             if (advIDTB.Text.Trim() != string.Empty)
             {
-                var students = from student in studentCollection
-                               where student.schoolid == advIDTB.Text
-                               select student;
-
-                // Display the students
-                foreach (var s in students)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    displayStudentRTB.AppendText("-First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
-                                                 "-Email: " + s.email + Environment.NewLine + "-Phone: " + s.phone + Environment.NewLine + "-Home address: " + s.homeAddress + Environment.NewLine +
-                                                 "-Gender: " + s.gender + Environment.NewLine + "-Race: " + s.race + Environment.NewLine + "-Birthdate: " + s.birthDate + Environment.NewLine +
-                                                 "-Learning Disability: " + s.learningDisability + Environment.NewLine + "-GPA: " + s.gpa + Environment.NewLine + "-Enrollment Year: " + s.enrollmentYear + Environment.NewLine +
-                                                 "-Department: " + s.department + Environment.NewLine + "-Expected Graduation: " + s.expGraduation + Environment.NewLine);
+                    if (nodes[i]["schoolId"].InnerXml == advIDTB.Text)
+                    {
+                        displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine + "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine + "-School ID: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine +
+                                                     "-Email: " + nodes[i]["email"].InnerXml + Environment.NewLine + "-Phone: " + nodes[i]["phone"].InnerXml + Environment.NewLine + "-Home address: " + nodes[i]["homeAdress"].InnerXml + Environment.NewLine +
+                                                     "-Gender: " + nodes[i]["gender"].InnerXml + Environment.NewLine + "-Race: " + nodes[i]["race"].InnerXml + Environment.NewLine + "-Birthdate: " + nodes[i]["birthDate"].InnerXml + Environment.NewLine +
+                                                     "-Learning Disability: " + nodes[i]["learningDisability"].InnerXml + Environment.NewLine + "-GPA: " + nodes[i]["gpa"].InnerXml + Environment.NewLine + "-Enrollment Year: " + nodes[i]["enrollmentYear"].InnerXml + Environment.NewLine +
+                                                     "-Department: " + nodes[i]["department"].InnerXml + Environment.NewLine + "-Expected Graduation: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine);
+                    }
+
                 }
 
             }
@@ -100,22 +102,30 @@ namespace Assignment2
             if (advNameTB.Text.Trim() != string.Empty)
             {
                 string[] split = advNameTB.Text.Split(' ');
-                var students = from student in studentCollection
-                               where student.firstName == split[0]
-                               && student.lastName == split[1]
-                               select student;
-
-                // Display the students
-                foreach (var s in students)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    displayStudentRTB.AppendText("-First name: " + s.firstName + Environment.NewLine + "-Last name: " + s.lastName + Environment.NewLine + "-School ID: " + s.schoolid + Environment.NewLine +
-                                                 "-Email: " + s.email + Environment.NewLine + "-Phone: " + s.phone + Environment.NewLine + "-Home address: " + s.homeAddress + Environment.NewLine +
-                                                 "-Gender: " + s.gender + Environment.NewLine + "-Race: " + s.race + Environment.NewLine + "-Birthdate: " + s.birthDate + Environment.NewLine +
-                                                 "-Learning Disability: " + s.learningDisability + Environment.NewLine + "-GPA: " + s.gpa + Environment.NewLine + "-Enrollment Year: " + s.enrollmentYear + Environment.NewLine +
-                                                 "-Department: " + s.department + Environment.NewLine + "-Expected Graduation: " + s.expGraduation + Environment.NewLine);
+                    if (nodes[i]["firstName"].InnerXml == split[0] && nodes[i]["lastName"].InnerXml == split[1])
+                    {
+                        displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine + 
+                                                     "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine + 
+                                                     "-School ID: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine +
+                                                     "-Email: " + nodes[i]["email"].InnerXml + Environment.NewLine + 
+                                                     "-Phone: " + nodes[i]["phone"].InnerXml + Environment.NewLine + 
+                                                     "-Home address: " + nodes[i]["homeAddress"].InnerXml + Environment.NewLine +
+                                                     "-Gender: " + nodes[i]["gender"].InnerXml + Environment.NewLine + 
+                                                     "-Race: " + nodes[i]["race"].InnerXml + Environment.NewLine + 
+                                                     "-Birthdate: " + nodes[i]["birthDate"].InnerXml + Environment.NewLine +
+                                                     "-Learning Disability: " + nodes[i]["learningDisability"].InnerXml + Environment.NewLine + 
+                                                     "-GPA: " + nodes[i]["gpa"].InnerXml + Environment.NewLine + 
+                                                     "-Enrollment Year: " + nodes[i]["enrollmentYear"].InnerXml + Environment.NewLine +
+                                                     "-Department: " + nodes[i]["department"].InnerXml + Environment.NewLine + 
+                                                     "-Expected Graduation: " + nodes[i]["expGraduation"].InnerXml + Environment.NewLine);
+                    }
+
                 }
 
             }
+
             advIDTB.Clear();
             advNameTB.Clear();
             advDepartmentTB.Clear();

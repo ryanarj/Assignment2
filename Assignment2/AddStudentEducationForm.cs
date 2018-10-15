@@ -12,18 +12,19 @@ namespace Assignment2
     public partial class AddStudentEducationForm : Form
     {
         Dictionary<string, string> formDict = new Dictionary<string, string>();
-        public AddStudentEducationForm(Dictionary<string, string> form1Dict){
+        DirectoryInfo pFolder;
+        public AddStudentEducationForm(Dictionary<string, string> form1Dict, DirectoryInfo parentFolder)
+        {
             // Get the dictionary from the other form
             formDict = form1Dict;
-
+            pFolder = parentFolder;
             InitializeComponent();
         }
 
         private void submitBtn_Click(object sender, EventArgs e){
             // Add the dictionary values from the text box information
-
-
-            string fileName = @"C:\Users\KR\Documents\Visual Studio 2015\Projects\Assignment2\Assignment2\Students.xml";
+            string path = pFolder.FullName;
+            string fileName = path.Substring(0, path.Length - 3) + "Students.xml";
 
             if (departmentTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(departmentTB.Text, "^[a-zA-Z]+$")
                 && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "[0-9]")
@@ -67,29 +68,8 @@ namespace Assignment2
                 student.AppendChild(expGraduation); student.AppendChild(gpa);
                 doc.DocumentElement.AppendChild(student);
                 doc.Save(fileName);
-
-                /* Format the string to have commas
-                foreach (string s in formDict.Values)
-                {
-                    str += s + ",";
-                }
-                str += "\n";
-
-                // Keep the header values
-                if (!File.Exists(fileName))
-                {
-                    string header = "firstName,lastName,schoolId,homeAddress,email,phone,birthDate,gender,race,learningDisability,department,enrollmentYear,expGraduation,gpa" + Environment.NewLine;
-                    File.WriteAllText(fileName, header);
-                }
-
-                // Append the new string 
-                File.AppendAllText(fileName, str);
-
-                // Clear out the data
-                gpaTB.Clear();
-                departmentTB.Clear();
+                MessageBox.Show("New Student has been added!!");
                 this.Close();
-                */
 
             }
             else
