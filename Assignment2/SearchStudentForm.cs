@@ -17,15 +17,6 @@ namespace Assignment2
             InitializeComponent();
         }
 
-        private static List<Student> ProcessStudent(string pathToFile)
-        {
-            // Parses the file and then adds the items to a list
-            return File.ReadAllLines(pathToFile).Skip(1)
-                .Where(line => line.Length > 1)
-                .Select(Student.ParseFromFile)
-                .ToList();
-        }
-
         private void advSearchBtn_Click(object sender, EventArgs e)
         {
             displayStudentRTB.Clear();
@@ -58,7 +49,7 @@ namespace Assignment2
                 for (int i = 0; i < nodes.Count; i++)
                 {
                     double currGpa = double.Parse(nodes[i]["gpa"].InnerXml);
-                    if (gStart >= currGpa && gEnd <=currGpa)
+                    if (currGpa >= gStart && currGpa <=gEnd)
                     {
                         displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
                     }
@@ -73,7 +64,7 @@ namespace Assignment2
                 {
                     if (nodes[i]["learningDisability"].InnerXml != "N/A" || nodes[i]["learningDisability"].InnerXml != "n/a")
                     {
-                        displayStudentRTB.AppendText(nodes[i]["firstName"] + " " + nodes[i]["lastName"] + Environment.NewLine);
+                        displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
                     }
 
                 }
@@ -87,11 +78,20 @@ namespace Assignment2
                 {
                     if (nodes[i]["schoolId"].InnerXml == advIDTB.Text)
                     {
-                        displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine + "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine + "-School ID: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine +
-                                                     "-Email: " + nodes[i]["email"].InnerXml + Environment.NewLine + "-Phone: " + nodes[i]["phone"].InnerXml + Environment.NewLine + "-Home address: " + nodes[i]["homeAdress"].InnerXml + Environment.NewLine +
-                                                     "-Gender: " + nodes[i]["gender"].InnerXml + Environment.NewLine + "-Race: " + nodes[i]["race"].InnerXml + Environment.NewLine + "-Birthdate: " + nodes[i]["birthDate"].InnerXml + Environment.NewLine +
-                                                     "-Learning Disability: " + nodes[i]["learningDisability"].InnerXml + Environment.NewLine + "-GPA: " + nodes[i]["gpa"].InnerXml + Environment.NewLine + "-Enrollment Year: " + nodes[i]["enrollmentYear"].InnerXml + Environment.NewLine +
-                                                     "-Department: " + nodes[i]["department"].InnerXml + Environment.NewLine + "-Expected Graduation: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine);
+                        displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine +
+                                                     "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine +
+                                                     "-School ID: " + nodes[i]["schoolId"].InnerXml + Environment.NewLine +
+                                                     "-Email: " + nodes[i]["email"].InnerXml + Environment.NewLine +
+                                                     "-Phone: " + nodes[i]["phone"].InnerXml + Environment.NewLine +
+                                                     "-Home address: " + nodes[i]["homeAddress"].InnerXml + Environment.NewLine +
+                                                     "-Gender: " + nodes[i]["gender"].InnerXml + Environment.NewLine +
+                                                     "-Race: " + nodes[i]["race"].InnerXml + Environment.NewLine +
+                                                     "-Birthdate: " + nodes[i]["birthDate"].InnerXml + Environment.NewLine +
+                                                     "-Learning Disability: " + nodes[i]["learningDisability"].InnerXml + Environment.NewLine +
+                                                     "-GPA: " + nodes[i]["gpa"].InnerXml + Environment.NewLine +
+                                                     "-Enrollment Year: " + nodes[i]["enrollmentYear"].InnerXml + Environment.NewLine +
+                                                     "-Department: " + nodes[i]["department"].InnerXml + Environment.NewLine +
+                                                     "-Expected Graduation: " + nodes[i]["expGraduation"].InnerXml + Environment.NewLine);
                     }
 
                 }
@@ -126,6 +126,11 @@ namespace Assignment2
 
             }
 
+            if (displayStudentRTB.Text == "")
+            {
+                MessageBox.Show("Enter the correct values/ Student by these values are not present.");
+            }
+
             advIDTB.Clear();
             advNameTB.Clear();
             advDepartmentTB.Clear();
@@ -136,45 +141,4 @@ namespace Assignment2
         }
     }
 
-    class Student
-    {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string schoolid { get; set; }
-        public string homeAddress { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
-        public string race { get; set; }
-        public string birthDate { get; set; }
-        public string gender { get; set; }
-        public string learningDisability  { get; set; }
-        public double gpa { get; set; }
-        public string department { get; set; }
-        public string enrollmentYear { get; set; }
-        public string expGraduation { get; set; }
-        internal static Student ParseFromFile(string line)
-        {
-            var columns = line.Split(',');
-
-            return new Student
-            {
-                // Parse out each column in Studdent object
-                firstName = columns[0],
-                lastName = columns[1],
-                schoolid = columns[2],
-                homeAddress = columns[3],
-                email = columns[4],
-                phone = columns[5],
-                birthDate = columns[6],
-                gender = columns[7],
-                race = columns[8],
-                learningDisability = columns[9],
-                department = columns[10],
-                enrollmentYear = columns[11],
-                expGraduation = columns[12],
-                gpa = double.Parse(columns[13])
-
-            };
-        }
-    }
 }

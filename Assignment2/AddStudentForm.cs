@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Assignment2
@@ -9,6 +10,7 @@ namespace Assignment2
     public partial class AddStudentForm : Form
     {
         DirectoryInfo pFolder1;
+
         public AddStudentForm(DirectoryInfo pFolder)
         {
             pFolder1 = pFolder;
@@ -23,6 +25,19 @@ namespace Assignment2
         private void toEducationFormBtn_Click(object sender, EventArgs e){
             // Add all the values into a dictionary
             Dictionary<string, string> formText = new Dictionary<string, string>();
+
+            var boxes = Controls.OfType<System.Windows.Forms.TextBox>();
+            foreach (var box in boxes)
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    errorProvider1.SetError(box, "Please fill the required field");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
+            }
 
 
             if (firstNameTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(firstNameTB.Text, "^[a-zA-Z]+$") 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -22,6 +23,22 @@ namespace Assignment2
         }
 
         private void submitBtn_Click(object sender, EventArgs e){
+
+            var boxes = Controls.OfType<System.Windows.Forms.TextBox>();
+            foreach (var box in boxes)
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    errorProvider1.SetError(box, "Please fill the required field");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
+            }
+
+
+
             // Add the dictionary values from the text box information
             string path = pFolder.FullName;
             string fileName = path.Substring(0, path.Length - 3) + "Students.xml";
@@ -78,5 +95,6 @@ namespace Assignment2
             }
 
         }
+
     }
 }

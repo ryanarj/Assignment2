@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toEducationFormBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.firstNameTB = new System.Windows.Forms.TextBox();
@@ -51,6 +52,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.toAdvanceSearchBtn = new System.Windows.Forms.Button();
             this.deleteUserBtn = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toEducationFormBtn
@@ -255,6 +258,10 @@
             this.deleteUserBtn.UseVisualStyleBackColor = true;
             this.deleteUserBtn.Click += new System.EventHandler(this.deleteUserBtn_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +293,7 @@
             this.Controls.Add(this.toEducationFormBtn);
             this.Name = "AddStudentForm";
             this.Text = "Add a new student";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +324,7 @@
         public System.Windows.Forms.TextBox genderTB;
         private System.Windows.Forms.Button toAdvanceSearchBtn;
         private System.Windows.Forms.Button deleteUserBtn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

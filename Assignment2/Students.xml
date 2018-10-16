@@ -16,4 +16,36 @@
     <expGraduation>2017</expGraduation>
     <gpa>2.5</gpa>
   </Student>
+  <Student>
+    <firstName>qer</firstName>
+    <lastName>qwe</lastName>
+    <schoolId>qwe</schoolId>
+    <homeAddress>e</homeAddress>
+    <email>we</email>
+    <phone>qwe</phone>
+    <birthDate>qwe</birthDate>
+    <gender>qwe</gender>
+    <race>qwe</race>
+    <learningDisability>qwe</learningDisability>
+    <department>cs</department>
+    <enrollmentYear>2013</enrollmentYear>
+    <expGraduation>2019</expGraduation>
+    <gpa>2.3</gpa>
+  </Student>
+  <Student>
+    <firstName>asd</firstName>
+    <lastName>asd</lastName>
+    <schoolId>asd</schoolId>
+    <homeAddress>asd</homeAddress>
+    <email>asd</email>
+    <phone>asd</phone>
+    <birthDate>asd</birthDate>
+    <gender>asd</gender>
+    <race>asd</race>
+    <learningDisability>asd</learningDisability>
+    <department>asd</department>
+    <enrollmentYear>2013</enrollmentYear>
+    <expGraduation>2018</expGraduation>
+    <gpa>2.5</gpa>
+  </Student>
 </root>
