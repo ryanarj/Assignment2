@@ -138,7 +138,7 @@
             // 
             this.displayStudentRTB.Location = new System.Drawing.Point(9, 307);
             this.displayStudentRTB.Name = "displayStudentRTB";
-            this.displayStudentRTB.Size = new System.Drawing.Size(255, 96);
+            this.displayStudentRTB.Size = new System.Drawing.Size(363, 96);
             this.displayStudentRTB.TabIndex = 19;
             this.displayStudentRTB.Text = "";
             // 
@@ -181,7 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(295, 415);
+            this.ClientSize = new System.Drawing.Size(384, 415);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.advNameTB);
             this.Controls.Add(this.label3);

@@ -32,7 +32,7 @@ namespace Assignment2
 
                 for (int i = 0; i < nodes.Count; i++){
      
-                    if (nodes[i]["department"].InnerXml == advDepartmentTB.Text || nodes[i]["gender"].InnerXml == advCategoryTB.Text || nodes[i]["race"].InnerXml == advCategoryTB.Text)
+                    if (nodes[i]["department"].InnerXml.Trim().Equals(advDepartmentTB.Text.Trim()) || nodes[i]["gender"].InnerXml.Trim().Equals(advCategoryTB.Text.Trim()) || nodes[i]["race"].InnerXml.Trim().Equals(advCategoryTB.Text.Trim()))
                     {
                         displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
                     }
@@ -62,9 +62,9 @@ namespace Assignment2
             {
                 for (int i = 0; i < nodes.Count; i++)
                 {
-                    if (nodes[i]["learningDisability"].InnerXml != "N/A" || nodes[i]["learningDisability"].InnerXml != "n/a")
+                    if (!nodes[i]["learningDisability"].InnerXml.Trim().Equals("N/A"))
                     {
-                        displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + Environment.NewLine);
+                        displayStudentRTB.AppendText(nodes[i]["firstName"].InnerXml + " " + nodes[i]["lastName"].InnerXml + " has this type of learning disability " + nodes[i]["learningDisability"].InnerXml + Environment.NewLine);
                     }
 
                 }
@@ -76,7 +76,7 @@ namespace Assignment2
             {
                 for (int i = 0; i < nodes.Count; i++)
                 {
-                    if (nodes[i]["schoolId"].InnerXml == advIDTB.Text)
+                    if (nodes[i]["schoolId"].InnerXml.Trim().Equals(advIDTB.Text))
                     {
                         displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine +
                                                      "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine +
@@ -104,7 +104,7 @@ namespace Assignment2
                 string[] split = advNameTB.Text.Split(' ');
                 for (int i = 0; i < nodes.Count; i++)
                 {
-                    if (nodes[i]["firstName"].InnerXml == split[0] && nodes[i]["lastName"].InnerXml == split[1])
+                    if (nodes[i]["firstName"].InnerXml.Trim().Equals(split[0]) && nodes[i]["lastName"].InnerXml.Trim().Equals(split[1]))
                     {
                         displayStudentRTB.AppendText("-First name: " + nodes[i]["firstName"].InnerXml + Environment.NewLine + 
                                                      "-Last name: " + nodes[i]["lastName"].InnerXml + Environment.NewLine + 
@@ -126,9 +126,9 @@ namespace Assignment2
 
             }
 
-            if (displayStudentRTB.Text == "")
+            if (displayStudentRTB.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Enter the correct values/ Student by these values are not present.");
+                MessageBox.Show("Enter the correct values/Student(s) by these values are not present.");
             }
 
             advIDTB.Clear();

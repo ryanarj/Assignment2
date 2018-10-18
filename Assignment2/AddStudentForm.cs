@@ -42,12 +42,12 @@ namespace Assignment2
 
             if (firstNameTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(firstNameTB.Text, "^[a-zA-Z]+$") 
                 && lastNameTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(lastNameTB.Text, "^[a-zA-Z]+$")
-                && schoolIdTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(schoolIdTB.Text, "^[a-zA-Z]+$")
+                && schoolIdTB.Text != "" 
                 && homeAddressTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(homeAddressTB.Text, "^[a-zA-Z]+$")
-                && emailTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(emailTB.Text, "^[a-zA-Z]+$")
-                && phoneNumberTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(phoneNumberTB.Text, "^[a-zA-Z]+$")
+                && emailTB.Text != ""
+                && phoneNumberTB.Text != ""
                 && raceTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(raceTB.Text, "^[a-zA-Z]+$")
-                && learningDisabilityTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(learningDisabilityTB.Text, "^[a-zA-Z]+$")
+                && learningDisabilityTB.Text != ""
                 && genderTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(genderTB.Text, "^[a-zA-Z]+$"))
             {
                 formText["firstName"] = firstNameTB.Text;
@@ -70,13 +70,13 @@ namespace Assignment2
                 emailTB.Clear();
                 phoneNumberTB.Clear();
                 raceTB.Clear();
-                birthDateTB.Clear();
                 genderTB.Clear();
                 learningDisabilityTB.Clear();
 
                 // Show the Add student education form
                 AddStudentEducationForm addStudentEducation = new AddStudentEducationForm(formText, pFolder1);
                 addStudentEducation.Show();
+                this.Close();
 
             }
             else
@@ -86,17 +86,6 @@ namespace Assignment2
         
         }
 
-        private void toAdvanceSearchBtn_Click(object sender, EventArgs e){
-            // Show the Student search form
-            SearchStudentForm searchStudent = new SearchStudentForm(pFolder1);
-            searchStudent.Show();
-        }
-
-        private void deleteUserBtn_Click(object sender, EventArgs e){
-            // Show the Delete student form
-            DeleteStudentForm deleteSerach = new DeleteStudentForm(pFolder1);
-            deleteSerach.Show();
-        }
     }
 
 }

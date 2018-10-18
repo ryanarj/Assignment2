@@ -37,8 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.enrollementYearCB = new System.Windows.Forms.ComboBox();
-            this.expectedGradCB = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.expectedGradDP = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,30 +123,24 @@
             this.enrollementYearCB.Size = new System.Drawing.Size(106, 21);
             this.enrollementYearCB.TabIndex = 30;
             // 
-            // expectedGradCB
-            // 
-            this.expectedGradCB.FormattingEnabled = true;
-            this.expectedGradCB.Items.AddRange(new object[] {
-            "2017",
-            "2018",
-            "2019",
-            "2020"});
-            this.expectedGradCB.Location = new System.Drawing.Point(12, 103);
-            this.expectedGradCB.Name = "expectedGradCB";
-            this.expectedGradCB.Size = new System.Drawing.Size(106, 21);
-            this.expectedGradCB.TabIndex = 31;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // expectedGradDP
+            // 
+            this.expectedGradDP.Location = new System.Drawing.Point(12, 109);
+            this.expectedGradDP.Name = "expectedGradDP";
+            this.expectedGradDP.Size = new System.Drawing.Size(200, 20);
+            this.expectedGradDP.TabIndex = 32;
             // 
             // AddStudentEducationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(284, 141);
-            this.Controls.Add(this.expectedGradCB);
+            this.ClientSize = new System.Drawing.Size(372, 141);
+            this.Controls.Add(this.expectedGradDP);
             this.Controls.Add(this.enrollementYearCB);
             this.Controls.Add(this.gpaTB);
             this.Controls.Add(this.label8);
@@ -173,7 +167,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.ComboBox enrollementYearCB;
-        private System.Windows.Forms.ComboBox expectedGradCB;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker expectedGradDP;
     }
 }

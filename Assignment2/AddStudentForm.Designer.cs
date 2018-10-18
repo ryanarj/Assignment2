@@ -42,7 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.phoneNumberTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.birthDateTB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.learningDisabilityTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,9 +49,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.genderTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.toAdvanceSearchBtn = new System.Windows.Forms.Button();
-            this.deleteUserBtn = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.birthDateTB = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +59,7 @@
             this.toEducationFormBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toEducationFormBtn.Location = new System.Drawing.Point(172, 205);
             this.toEducationFormBtn.Name = "toEducationFormBtn";
-            this.toEducationFormBtn.Size = new System.Drawing.Size(97, 23);
+            this.toEducationFormBtn.Size = new System.Drawing.Size(97, 62);
             this.toEducationFormBtn.TabIndex = 0;
             this.toEducationFormBtn.Text = "Enter Education";
             this.toEducationFormBtn.UseVisualStyleBackColor = true;
@@ -170,13 +168,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Phone Number";
             // 
-            // birthDateTB
-            // 
-            this.birthDateTB.Location = new System.Drawing.Point(172, 52);
-            this.birthDateTB.Name = "birthDateTB";
-            this.birthDateTB.Size = new System.Drawing.Size(100, 20);
-            this.birthDateTB.TabIndex = 14;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -238,45 +229,30 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Gender";
             // 
-            // toAdvanceSearchBtn
-            // 
-            this.toAdvanceSearchBtn.Location = new System.Drawing.Point(172, 247);
-            this.toAdvanceSearchBtn.Name = "toAdvanceSearchBtn";
-            this.toAdvanceSearchBtn.Size = new System.Drawing.Size(97, 23);
-            this.toAdvanceSearchBtn.TabIndex = 21;
-            this.toAdvanceSearchBtn.Text = "Advance Search";
-            this.toAdvanceSearchBtn.UseVisualStyleBackColor = true;
-            this.toAdvanceSearchBtn.Click += new System.EventHandler(this.toAdvanceSearchBtn_Click);
-            // 
-            // deleteUserBtn
-            // 
-            this.deleteUserBtn.Location = new System.Drawing.Point(275, 205);
-            this.deleteUserBtn.Name = "deleteUserBtn";
-            this.deleteUserBtn.Size = new System.Drawing.Size(75, 62);
-            this.deleteUserBtn.TabIndex = 22;
-            this.deleteUserBtn.Text = "Delete a User";
-            this.deleteUserBtn.UseVisualStyleBackColor = true;
-            this.deleteUserBtn.Click += new System.EventHandler(this.deleteUserBtn_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // birthDateTB
+            // 
+            this.birthDateTB.Location = new System.Drawing.Point(172, 49);
+            this.birthDateTB.Name = "birthDateTB";
+            this.birthDateTB.Size = new System.Drawing.Size(200, 20);
+            this.birthDateTB.TabIndex = 21;
             // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(366, 289);
-            this.Controls.Add(this.deleteUserBtn);
-            this.Controls.Add(this.toAdvanceSearchBtn);
+            this.ClientSize = new System.Drawing.Size(459, 289);
+            this.Controls.Add(this.birthDateTB);
             this.Controls.Add(this.learningDisabilityTB);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.raceTB);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.genderTB);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.birthDateTB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.phoneNumberTB);
             this.Controls.Add(this.label6);
@@ -318,13 +294,11 @@
         public System.Windows.Forms.TextBox homeAddressTB;
         public System.Windows.Forms.TextBox emailTB;
         public System.Windows.Forms.TextBox phoneNumberTB;
-        public System.Windows.Forms.TextBox birthDateTB;
         public System.Windows.Forms.TextBox learningDisabilityTB;
         public System.Windows.Forms.TextBox raceTB;
         public System.Windows.Forms.TextBox genderTB;
-        private System.Windows.Forms.Button toAdvanceSearchBtn;
-        private System.Windows.Forms.Button deleteUserBtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker birthDateTB;
     }
 }
 

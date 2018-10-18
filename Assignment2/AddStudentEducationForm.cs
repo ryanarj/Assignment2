@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -45,7 +43,7 @@ namespace Assignment2
 
             if (departmentTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(departmentTB.Text, "^[a-zA-Z]+$")
                 && gpaTB.Text != "" && System.Text.RegularExpressions.Regex.IsMatch(gpaTB.Text, "[0-9]")
-                && enrollementYearCB.Text != "" && expectedGradCB.Text != "")
+                && enrollementYearCB.Text != "" && expectedGradDP.Text != "")
             {
 
                 XmlDocument doc = new XmlDocument();
@@ -76,7 +74,7 @@ namespace Assignment2
                 XmlNode enrollmentYear = doc.CreateElement("enrollmentYear");
                 enrollmentYear.InnerText = enrollementYearCB.Text;
                 XmlNode expGraduation = doc.CreateElement("expGraduation");
-                expGraduation.InnerText = expectedGradCB.Text;
+                expGraduation.InnerText = expectedGradDP.Text;
                 XmlNode gpa = doc.CreateElement("gpa");
                 gpa.InnerText = gpaTB.Text;
                 student.AppendChild(firstName); student.AppendChild(lastName); student.AppendChild(schoolId); student.AppendChild(homeAddress);
